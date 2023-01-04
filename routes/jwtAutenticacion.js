@@ -60,7 +60,7 @@ router.post("/login", validarInformacion, async (req, res) => {
         const validPassword = await bcrypt.compare(password,user.rows[0].user_password );
       
           if (!validPassword) {
-            return res.status(401).json("Invalid Credential");
+            return res.status(401).json("Contraseña Incorrecta");
           }
 
           //generacion de token una vez comprobado 
